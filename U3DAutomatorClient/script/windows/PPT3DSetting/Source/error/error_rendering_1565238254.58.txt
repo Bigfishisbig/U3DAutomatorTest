@@ -1,0 +1,75 @@
+Log Info 2019:08:08 12:24:11:Open start load
+Log Info 2019:08:08 12:24:12:{"Module":"3DPPTAdapter, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null","Class":"ND3DPAdapter","Method":"LoadPackage","Desc":"打开文档进度反馈","TimeSpan":"0.6132755"}
+Log Info 2019:08:08 12:24:12:{"Module":"3DPPTAdapter, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null","Class":"ND3DPAdapter","Method":"LoadPackage","Desc":"打开文档进度反馈","TimeSpan":"0.03183365"}
+Log Info 2019:08:08 12:24:12:{"Module":"3DPPTAdapter, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null","Class":"ND3DPAdapter","Method":"LoadPackage","Desc":"打开文档进度反馈","TimeSpan":"0.1361771"}
+Log Info 2019:08:08 12:24:12:{"Module":"3DPPTAdapter, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null","Class":"ND3DPAdapter","Method":"LoadPackage","Desc":"打开文档进度反馈","TimeSpan":"0.009353638"}
+Log Info 2019:08:08 12:24:12:{"Module":"3DPPTAdapter, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null","Class":"ND3DPAdapter","Method":"LoadPackage","Desc":"文档加载完成","TimeSpan":"0.0008487701"}
+Log Info 2019:08:08 12:24:12:{"Module":"ND3DPPTFactory, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null","Class":"ND3DPPTFactory","Method":"Load","Desc":"元素创建","TimeSpan":"0.005182266"}
+Log Info 2019:08:08 12:24:12:{"Module":"ND3DPPTFactory, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null","Class":"ND3DPPTFactory","Method":"Load","Desc":"元素创建进度反馈回调","TimeSpan":"0.0004367828"}
+Log Info 2019:08:08 12:24:12:{"Module":"ND3DPPTFactory, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null","Class":"ND3DPPTFactory","Method":"Load","Desc":"元素创建完成回调","TimeSpan":"0.0001735687"}
+Log Info 2019:08:08 12:24:12:{"Module":"3DPPTAdapter, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null","Class":"ND3DPAdapter","Method":"LoadPackage","Desc":"file scene 加载完成","TimeSpan":"0.06541443"}
+Log Info 2019:08:08 12:24:12:{"Module":"ND3DPPTFactory, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null","Class":"ND3DPPTFactory","Method":"Load","Desc":"元素创建","TimeSpan":"0.001194"}
+Log Info 2019:08:08 12:24:12:{"Module":"ND3DPPTFactory, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null","Class":"ND3DPPTFactory","Method":"Load","Desc":"元素创建进度反馈回调","TimeSpan":"0.0002403259"}
+Log Info 2019:08:08 12:24:12:{"Module":"ND3DPPTFactory, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null","Class":"ND3DPPTFactory","Method":"Load","Desc":"元素创建完成回调","TimeSpan":"0.0001583099"}
+Log Info 2019:08:08 12:24:12:{"Module":"ND3DPPTFactory, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null","Class":"ND3DPPTFactory","Method":"Load","Desc":"元素创建","TimeSpan":"0.03668022"}
+Log Info 2019:08:08 12:24:12:{"Module":"ND3DPPTFactory, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null","Class":"ND3DPPTFactory","Method":"Load","Desc":"元素创建进度反馈回调","TimeSpan":"0.0003585815"}
+Log Info 2019:08:08 12:24:12:{"Module":"ND3DPPTFactory, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null","Class":"ND3DPPTFactory","Method":"Load","Desc":"元素创建完成回调","TimeSpan":"0.0002174377"}
+Log Info 2019:08:08 12:24:12:{"Module":"ND3DPPTFactory, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null","Class":"ND3DPPTFactory","Method":"Load","Desc":"元素创建","TimeSpan":"0.09518623"}
+Log Info 2019:08:08 12:24:12:{"Module":"ND3DPPTFactory, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null","Class":"ND3DPPTFactory","Method":"Load","Desc":"元素创建进度反馈回调","TimeSpan":"0.0002689362"}
+Log Info 2019:08:08 12:24:12:{"Module":"ND3DPPTFactory, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null","Class":"ND3DPPTFactory","Method":"Load","Desc":"元素创建完成回调","TimeSpan":"0.0003223419"}
+Log Info 2019:08:08 12:24:12:{"Module":"ND3DPPTFactory, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null","Class":"ND3DPPTFactory","Method":"Load","Desc":"元素创建","TimeSpan":"0.001483917"}
+Log Info 2019:08:08 12:24:12:{"Module":"ND3DPPTFactory, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null","Class":"ND3DPPTFactory","Method":"Load","Desc":"元素创建进度反馈回调","TimeSpan":"0.0001678467"}
+Log Info 2019:08:08 12:24:12:{"Module":"ND3DPPTFactory, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null","Class":"ND3DPPTFactory","Method":"Load","Desc":"元素创建完成回调","TimeSpan":"0.0001277924"}
+Log Info 2019:08:08 12:24:12:{"Module":"ND3DPPTFactory, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null","Class":"ND3DPPTFactory","Method":"Load","Desc":"元素创建","TimeSpan":"0.03550911"}
+Log Info 2019:08:08 12:24:12:{"Module":"ND3DPPTFactory, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null","Class":"ND3DPPTFactory","Method":"Load","Desc":"元素创建进度反馈回调","TimeSpan":"0.0002174377"}
+Log Info 2019:08:08 12:24:12:{"Module":"ND3DPPTFactory, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null","Class":"ND3DPPTFactory","Method":"Load","Desc":"元素创建完成回调","TimeSpan":"0.0003643036"}
+Log Info 2019:08:08 12:24:12:{"Module":"ND3DPPTFactory, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null","Class":"ND3DPPTFactory","Method":"Load","Desc":"元素创建","TimeSpan":"0.00176239"}
+Log Info 2019:08:08 12:24:12:{"Module":"ND3DPPTFactory, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null","Class":"ND3DPPTFactory","Method":"Load","Desc":"元素创建进度反馈回调","TimeSpan":"0.0002002716"}
+Log Info 2019:08:08 12:24:12:{"Module":"ND3DPPTFactory, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null","Class":"ND3DPPTFactory","Method":"Load","Desc":"元素创建完成回调","TimeSpan":"0.000207901"}
+Log Info 2019:08:08 12:24:12:{"Module":"ND3DPPTFactory, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null","Class":"ND3DPPTFactory","Method":"Load","Desc":"元素创建","TimeSpan":"0.006809235"}
+Log Info 2019:08:08 12:24:12:{"Module":"ND3DPPTFactory, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null","Class":"ND3DPPTFactory","Method":"Load","Desc":"元素创建进度反馈回调","TimeSpan":"0.0004405975"}
+Log Info 2019:08:08 12:24:12:{"Module":"ND3DPPTFactory, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null","Class":"ND3DPPTFactory","Method":"Load","Desc":"元素创建完成回调","TimeSpan":"0.0003833771"}
+Log Info 2019:08:08 12:24:12:{"Module":"ND3DPPTFactory, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null","Class":"ND3DPPTFactory","Method":"Load","Desc":"元素创建","TimeSpan":"0.001379013"}
+Log Info 2019:08:08 12:24:12:{"Module":"ND3DPPTFactory, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null","Class":"ND3DPPTFactory","Method":"Load","Desc":"元素创建进度反馈回调","TimeSpan":"0.0001525879"}
+Log Info 2019:08:08 12:24:12:{"Module":"ND3DPPTFactory, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null","Class":"ND3DPPTFactory","Method":"Load","Desc":"元素创建完成回调","TimeSpan":"0.0001449585"}
+Log Info 2019:08:08 12:24:12:{"Module":"ND3DPPTFactory, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null","Class":"ND3DPPTFactory","Method":"Load","Desc":"元素创建","TimeSpan":"0.0579834"}
+Log Info 2019:08:08 12:24:12:{"Module":"ND3DPPTFactory, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null","Class":"ND3DPPTFactory","Method":"Load","Desc":"元素创建进度反馈回调","TimeSpan":"0.0002498627"}
+Log Info 2019:08:08 12:24:12:{"Module":"ND3DPPTFactory, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null","Class":"ND3DPPTFactory","Method":"Load","Desc":"元素创建完成回调","TimeSpan":"0.0003929138"}
+Log Info 2019:08:08 12:24:12:{"Module":"ND3DPPTFactory, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null","Class":"ND3DPPTFactory","Method":"Load","Desc":"元素创建","TimeSpan":"0.006599426"}
+Log Info 2019:08:08 12:24:12:{"Module":"ND3DPPTFactory, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null","Class":"ND3DPPTFactory","Method":"Load","Desc":"元素创建进度反馈回调","TimeSpan":"0.0002250671"}
+Log Info 2019:08:08 12:24:12:{"Module":"ND3DPPTFactory, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null","Class":"ND3DPPTFactory","Method":"Load","Desc":"元素创建完成回调","TimeSpan":"0.0001811981"}
+Log Info 2019:08:08 12:24:13:{"Module":"ND3DPPTFactory, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null","Class":"ND3DPPTFactory","Method":"Load","Desc":"元素创建","TimeSpan":"0.1740704"}
+Log Info 2019:08:08 12:24:13:{"Module":"ND3DPPTFactory, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null","Class":"ND3DPPTFactory","Method":"Load","Desc":"元素创建进度反馈回调","TimeSpan":"0.0002841949"}
+Log Info 2019:08:08 12:24:13:{"Module":"ND3DPPTFactory, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null","Class":"ND3DPPTFactory","Method":"Load","Desc":"元素创建完成回调","TimeSpan":"0.0003376007"}
+Log Info 2019:08:08 12:24:13:{"Module":"ND3DPPTFactory, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null","Class":"ND3DPPTFactory","Method":"Load","Desc":"元素创建","TimeSpan":"0.00182724"}
+Log Info 2019:08:08 12:24:13:{"Module":"ND3DPPTFactory, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null","Class":"ND3DPPTFactory","Method":"Load","Desc":"元素创建进度反馈回调","TimeSpan":"0.000246048"}
+Log Info 2019:08:08 12:24:13:{"Module":"ND3DPPTFactory, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null","Class":"ND3DPPTFactory","Method":"Load","Desc":"元素创建完成回调","TimeSpan":"0.0002346039"}
+Log Info 2019:08:08 12:24:13:{"Module":"ND3DPPTFactory, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null","Class":"ND3DPPTFactory","Method":"Load","Desc":"元素创建","TimeSpan":"0.005357742"}
+Log Info 2019:08:08 12:24:13:{"Module":"ND3DPPTFactory, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null","Class":"ND3DPPTFactory","Method":"Load","Desc":"元素创建进度反馈回调","TimeSpan":"0.0002002716"}
+Log Info 2019:08:08 12:24:13:{"Module":"ND3DPPTFactory, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null","Class":"ND3DPPTFactory","Method":"Load","Desc":"元素创建完成回调","TimeSpan":"0.0002498627"}
+Log Info 2019:08:08 12:24:13:{"Module":"ND3DPPTFactory, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null","Class":"ND3DPPTFactory","Method":"Load","Desc":"元素创建","TimeSpan":"0.01777458"}
+Log Info 2019:08:08 12:24:13:{"Module":"ND3DPPTFactory, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null","Class":"ND3DPPTFactory","Method":"Load","Desc":"元素创建进度反馈回调","TimeSpan":"0.0003604889"}
+Log Info 2019:08:08 12:24:13:{"Module":"ND3DPPTFactory, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null","Class":"ND3DPPTFactory","Method":"Load","Desc":"元素创建完成回调","TimeSpan":"0.0001869202"}
+Log Info 2019:08:08 12:24:13:{"Module":"ND3DPPTFactory, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null","Class":"ND3DPPTFactory","Method":"Load","Desc":"元素创建","TimeSpan":"0.09130287"}
+Log Info 2019:08:08 12:24:13:{"Module":"ND3DPPTFactory, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null","Class":"ND3DPPTFactory","Method":"Load","Desc":"元素创建进度反馈回调","TimeSpan":"0.0003795624"}
+Log Info 2019:08:08 12:24:13:{"Module":"ND3DPPTFactory, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null","Class":"ND3DPPTFactory","Method":"Load","Desc":"元素创建完成回调","TimeSpan":"0.0004901886"}
+Log Info 2019:08:08 12:24:13:{"Module":"ND3DPPTFactory, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null","Class":"ND3DPPTFactory","Method":"Load","Desc":"元素创建","TimeSpan":"0.05200958"}
+Log Info 2019:08:08 12:24:13:{"Module":"ND3DPPTFactory, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null","Class":"ND3DPPTFactory","Method":"Load","Desc":"元素创建进度反馈回调","TimeSpan":"0.0002861023"}
+Log Info 2019:08:08 12:24:13:{"Module":"ND3DPPTFactory, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null","Class":"ND3DPPTFactory","Method":"Load","Desc":"元素创建完成回调","TimeSpan":"0.0002632141"}
+Log Info 2019:08:08 12:24:13:{"Module":"ND3DPPTFactory, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null","Class":"ND3DPPTFactory","Method":"Load","Desc":"元素创建","TimeSpan":"0.07277489"}
+Log Info 2019:08:08 12:24:13:{"Module":"ND3DPPTFactory, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null","Class":"ND3DPPTFactory","Method":"Load","Desc":"元素创建进度反馈回调","TimeSpan":"0.0002918243"}
+Log Info 2019:08:08 12:24:13:{"Module":"ND3DPPTFactory, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null","Class":"ND3DPPTFactory","Method":"Load","Desc":"元素创建完成回调","TimeSpan":"0.0007400513"}
+Log Info 2019:08:08 12:24:13:{"Module":"ND3DPPTFactory, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null","Class":"ND3DPPTFactory","Method":"Load","Desc":"元素创建","TimeSpan":"0.0008468628"}
+Log Info 2019:08:08 12:24:13:{"Module":"ND3DPPTFactory, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null","Class":"ND3DPPTFactory","Method":"Load","Desc":"元素创建进度反馈回调","TimeSpan":"0.0002803802"}
+Log Info 2019:08:08 12:24:13:{"Module":"ND3DPPTFactory, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null","Class":"ND3DPPTFactory","Method":"Load","Desc":"元素创建完成回调","TimeSpan":"0.0001945496"}
+Log Info 2019:08:08 12:24:13:{"Module":"3DPPTAdapter, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null","Class":"ND3DPAdapter","Method":"LoadPackage","Desc":"page scene 加载完成","TimeSpan":"0.9996681"}
+Log Info 2019:08:08 12:24:13:{"Module":"3DPPTAdapter, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null","Class":"ND3DPAdapter","Method":"LoadPackage","Desc":"page scene 加载完成","TimeSpan":"0.003133774"}
+Log Info 2019:08:08 12:24:13:{"Module":"3DPPTAdapter, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null","Class":"ND3DPAdapter","Method":"LoadPackage","Desc":"page scene 加载完成","TimeSpan":"0.009111404"}
+Log Info 2019:08:08 12:24:13:{"Module":"3DPPTAdapter, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null","Class":"ND3DPAdapter","Method":"LoadPackage","Desc":"page scene 加载完成","TimeSpan":"0.003536224"}
+Log Info 2019:08:08 12:24:13:{"Module":"3DPPTAdapter, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null","Class":"ND3DPAdapter","Method":"LoadPackage","Desc":"page scene 加载完成","TimeSpan":"0.001930237"}
+Log Info 2019:08:08 12:24:13:{"Module":"3DPPTAdapter, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null","Class":"ND3DPAdapter","Method":"LoadPackage","Desc":"page scene 加载完成","TimeSpan":"0.001695633"}
+Log Info 2019:08:08 12:24:13:{"Module":"3DPPTAdapter, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null","Class":"ND3DPAdapter","Method":"LoadPackage","Desc":"page scene 加载完成","TimeSpan":"0.00280571"}
+Log Info 2019:08:08 12:24:13:{"Module":"3DPPTAdapter, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null","Class":"ND3DPAdapter","Method":"LoadPackage","Desc":"page scene 加载完成","TimeSpan":"0.001012802"}
+Log Info 2019:08:08 12:24:13:{"Module":"3DPPTAdapter, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null","Class":"ND3DPAdapter","Method":"LoadPackage","Desc":"page scene 加载完成","TimeSpan":"0.001996994"}
+Log Info 2019:08:08 12:24:13:{"Module":"3DPPTAdapter, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null","Class":"ND3DPAdapter","Method":"LoadPackage","Desc":"page scene 加载完成","TimeSpan":"0.002433777"}
+Log Info 2019:08:08 12:24:13:SyncInfo当前页数：1

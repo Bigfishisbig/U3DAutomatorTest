@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+        <!DOCTYPE stax SYSTEM "stax.dtd">
+      <!-- sample1.xml - Sample of a job definition file for STAX
+        4 Job Description:
+        5 This job executes some STAF commands and sends messages to the STAX Job Monitor.
+        6 -->
+        <stax>
+     <script> WindowsMachine = ['172.18.60.170'] </script>
+     <defaultcall function="UIAutomatorTest">
+     </defaultcall>
+     <function name="ListDirectory">
+     <paralleliterate var = "machineName" in="WindowsMachine">
+     <testcase name = "'UIAutomatorTest'">
+
+     <sequence>
+     <stafcmd>
+     <location>'172.18.62.138'</location> <!-- 服务端ip -->
+     <service>'fs'</service>
+     <request>'COPY DIRECTORY D:\YCY\u3d TODIRECTORY D:\YCY\u3d TOMACHINE %s RECURSE KEEPEMPTYDIRECTORIES' % machineName </request>
+     </stafcmd>
+     <if expr="RC == 0">
+     <sequence>
+     <tcstatus result="'pass'"/>
+     <log message="1">'List directory successfully on %s' % machineName</log>
+     </sequence>
+     <else>
+     <sequence>
+     <tcstatus result="'fail'"/>
+     <log message="1">'Error in listing directory on %s' % machineName</log>
+     </sequence>
+     </else>
+     </if>
+     <stafcmd>
+     <location>'%s' % machineName</location>
+     <service>'Process'</service>
+     <request>'start command D:\YCY\u3d\install.bat'</request>
+     </stafcmd>
+     </sequence>
+
+     </testcase>
+     </paralleliterate>
+     </function>
+     </stax>

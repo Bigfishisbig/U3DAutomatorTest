@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.js"></script>
+
+    <script>
+    function upPop() {
+        $('#upPop-box').upPop();
+        $('.tab-tit a').each(function(index, element) {
+            $(this).click(function() {
+                $('.tab-tit a').removeClass('active');
+                $(this).addClass('active');
+                $('.tab-box .tab-son').hide();
+                $('.tab-box .tab-son').eq(index).fadeIn('fast');
+            });
+        });
+    }
+
+
+var pageLoad = (function(){
+        return function(url, callback, errorCb){
+            var img = new Image();
+            img.src = url;
+            if (img.complete) {
+                callback.call(img);
+                return;
+            };
+            img.onload = function () {
+                callback.call(this);
+                img = img.onload = img.onerror = null;
+            };
+            img.onerror = errorCb || function(){};
+        }
+    })();
+
+
+    function getImgForFeedBack(sid,imgids){
+        $("#pop_one").hide();
+        $("#loadtxt").show(); //图片没有加载出来的时候显示一张load图片
+        $.ajax({
+            type:'POST',
+            url:'/index.php?s=/Home/Order/getImgCheck.html',
+            data:{"imgids":imgids},
+            dataType:'json',
+            success:function(data,textStatu){
+                if(data.statu){
+                    $("#pop_one").attr('src',data.MSG);
+                    pageLoad(data.MSG,function(){
+                        $("#loadtxt").hide();
+                        $('#poplink').attr('href',data.MSG);
+                        $("#pop_one").show(800);
+                    });
+                    upPop();
+                }else{
+                    tusi(data.MSG);
+                }
+
+            }
+        })
+    }
+
+</script>
+
+</head>
+
+
+
+<body>
+
+
+<a class="btnLump btnLump1" href="javascript:void(0)" onClick="getImgForFeedBack('.$val[\'check_img\'].')">查看</a>
+
+<div class="upPop-box" id = 'upPop-box'>
+    <div class="backdrop"></div>
+    <div class="info-pop screenshot" id="upPop">
+        <a href="javascript:;" class="close"></a>
+        <div class="tab-tit">
+            <a href="javascript:;" class="active">任务反馈截图</a>
+        </div>
+
+        <div class="tab-box" style="overflow:hidden; width: 336px; height: 306px; text-align: center;"><div id="loadtxt" style="display: none;"><img src="__IMG__/loadpic.jpg"></div>
+            <a href="" id="poplink" target="_blank"><img height="300" alt="" id ="pop_one" src="images/tempor/1.png" style="display:block; max-width: 100%; max-height: 100%;" class="tab-son"></a>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

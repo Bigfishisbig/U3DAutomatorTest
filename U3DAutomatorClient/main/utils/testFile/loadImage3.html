@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+
+<html>
+<meta content="text/html; charset=gb2312" http-equiv="Content-Type" />
+<body>
+
+<!--规范浮窗-->
+<DIV id="flow" onMouseOver="javascript:moveflow=0;" onMouseOut="javascript:moveflow=1;" style="LEFT: 350px; WIDTH: 400px; POSITION: absolute; TOP: -1000px; HEIGHT: 163px;  border:none; background-color:transparent; z-index:999; visibility:visible">
+    <!--background-color: #EFEFEF; layer-background-color: #EFEFEF; background-color:#7EF030; layer-background-color: #7EF030;  border: 1px none #000000; -->
+  <DIV align=left>
+	<table border="0"  width="300" height="300" cellspacing="0" cellpadding="0" style="border-collapse: collapse" bordercolor="#C0C0C0">
+		  <tr height="10">
+                  <td><span id="guanbi" οnclick='javascript:(document.getElementById("flow")).style.display="none";'><font color="black">关闭</font></span>
+                  </td>
+                  </tr>
+                  <tr height="153">
+			<td>
+			<p align="center">
+			<map name="FPMap1">
+             <area onFocus="blur()" href="https://www.baidu.com" target="_blank" shape="rect" coords="0,0,400,153" />
+
+			</map>
+        <img style="cursor: hand;" border="0" src="1.png" width="262" height="118" usemap="#FPMap1" />
+
+
+               </td>
+		</tr>
+	</table>
+  </DIV>
+</DIV>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+<script language="javascript">
+var xPos = 350;
+var yPos = 200;
+var step = 1;
+var delay = 30;
+var height = 0;
+var Hoffset = 0;
+var Woffset = 0;
+var yon = 0;
+var xon = 0;
+var pause = true;
+var interval;
+var moveflow=1;
+flowE=document.getElementById("flow");
+flowE.style.top = yPos+"px";
+
+function changePos() {
+width = document.body.clientWidth;
+height = document.body.clientHeight;
+Hoffset = flowE.offsetHeight;
+Woffset = flowE.offsetWidth;
+flowE.style.left = (xPos + document.body.scrollLeft)+"px";
+flowE.style.top = (yPos + document.body.scrollTop)+"px";
+if (moveflow==1){
+	if (yon) {
+		yPos = yPos + step;
+		}
+	else {
+		yPos = yPos - step;
+		}
+	if (yPos < 0) {
+		yon = 1;
+		yPos = 0;
+		}
+	if (yPos >= (height - Hoffset)) {
+		yon = 0;
+		yPos = (height - Hoffset);
+		}
+	if (xon) {
+		xPos = xPos + step;
+		}
+	else {
+		xPos = xPos - step;
+		}
+	if (xPos < 0) {
+		xon = 1;
+		xPos = 0;
+		}
+	if (xPos >= (width - Woffset)) {
+		xon = 0;
+		xPos = (width - Woffset);
+		}
+	}
+}
+
+function start() {
+flowE.style.visibility = "visible";
+//flowE.style.visibility = "hidden";
+interval = setInterval('changePos()', delay);
+}
+start();
+</script>
+<!--规范浮窗-->

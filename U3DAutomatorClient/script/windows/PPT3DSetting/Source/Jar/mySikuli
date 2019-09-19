@@ -1,0 +1,617 @@
+import java.awt.Dimension;
+import java.awt.Rectangle;
+import java.awt.Robot;
+import java.awt.Toolkit;
+import java.awt.image.BufferedImage;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.Serializable;
+import java.util.Iterator;
+
+import javax.imageio.ImageIO;
+
+import org.sikuli.script.App;
+import org.sikuli.script.FindFailed;
+import org.sikuli.script.Key;
+import org.sikuli.script.Location;
+import org.sikuli.script.Match;
+import org.sikuli.script.Pattern;
+import org.sikuli.script.Screen;
+
+public class RemoteSikuli {
+
+	private static final long serialVersionUID = 1003206220381872280L;
+
+	int pageJre = 0;//0为开发模式;1为生产模式.
+	public String ip = "";//本机IP
+	int success = 1;//操作成功
+	int fail = -1;//操作失败
+	int pageNotFind = -999;// 控件找不到导致操作失败
+	Screen s = new Screen();
+	Location l = new Location(0, 0);
+
+	/**
+	 * 初始化工作
+	 * @param pJre 运行环境初始化
+	 * @param ip	本机IP
+	 */
+	public void init(String pJre, String ip){
+		System.out.println("ip==="+ip);
+		this.pageJre = Integer.valueOf(pJre);
+		this.ip = ip;
+	}
+
+	/**
+	 * 根据坐标进行点击
+	 * @param dx x坐标
+	 * @param dy y坐标
+	 * @return
+	 */
+	public long click(int dx, int dy) {
+		try{
+			l.setLocation(dx, dy);
+			l.click();
+			return System.currentTimeMillis();
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+		return pageNotFind;
+	}
+
+	/**
+	 * 单击目标图片
+	 * @param target 目标图片
+	 * @return 成功返回当前时间戳;失败返回-999
+	 */
+	public long click(String target) {
+
+		try{
+			s.click(ip+target);
+			return System.currentTimeMillis();
+
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+		return pageNotFind;
+	}
+
+	/**
+	 * 对相识度达到要求的图片进行点击
+	 * @param target	要求的图片
+	 * @param similar	相识度  0.0~1.0;如 0.1,0.2,0.3,0.4,0.5
+	 * @return  成功返回当前时间戳;失败返回-999
+	 */
+	public long click(String target,float similar)  {
+
+		try {
+			s.click(new Pattern(ip+target).similar(similar));
+			return System.currentTimeMillis();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return pageNotFind;
+	}
+
+	/**
+	 * 点击目标图片的相对位置
+	 * @param target 目标图片
+	 * @param dx 	 x坐标
+	 * @param dy	 y坐标
+	 * @return 成功返回当前时间戳;失败返回-999
+	 */
+	public long click(String target, int dx, int dy){
+
+		try {
+			s.click(new Pattern(ip+target).targetOffset(dx, dy));
+			return System.currentTimeMillis();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return pageNotFind;
+	}
+
+	/**
+	 * 相识度达到要求的图片进行坐标定位点击
+	 * @param target 要求的图片
+	 * @param similar 相识度  0.0~1.0;如 0.1,0.2,0.3,0.4,0.5
+	 * @param dx x坐标
+	 * @param dy y坐标
+	 * @return 成功返回当前时间戳;失败返回-999
+	 */
+	public long click(String target, float similar, int dx, int dy) {
+
+		try {
+			s.click(new Pattern(ip+target).similar(similar).targetOffset(dx, dy));
+			return System.currentTimeMillis();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return pageNotFind;
+	}
+
+	/**
+	 * 同时存在多个目标图片的时候，点击指定位置出现的图片
+	 * @param target 目标图片
+	 * @param index 指定位置出现
+	 */
+	public long click(String target, int index){
+
+		try {
+			Iterator<Match> itrmc = s.findAll(ip+target);
+			int i = 1;
+			while (itrmc.hasNext()){
+				 Match mc = new Match(itrmc.next());
+				 if (i == index){
+					 s.click(mc);
+					 return System.currentTimeMillis();
+				 }
+				 i++;
+			 }
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		return pageNotFind;
+	}
+
+	/**
+	 * 双击目标图片
+	 * @param target 目标图片
+	 * @return
+	 */
+	public long doubleclick(String target){
+
+		try{
+			s.doubleClick(ip+target);
+			return System.currentTimeMillis();
+		}catch(Exception e){
+			return pageNotFind;
+		}
+	}
+
+	/**
+	 * 输入内容
+	 * @param str 内容
+	 * @return
+	 */
+	public long type(String str) {
+
+		s.type(str);
+		return System.currentTimeMillis();
+	}
+
+	/**
+	 * 启动目标路径的应用
+	 * @param path 目标路径
+	 */
+	public long runApp(String path){
+		App.open(path);
+		return System.currentTimeMillis();
+	}
+
+	/**
+	 * 判断目标图片是否存在
+	 * @param target 目标图片
+	 * @return
+	 */
+	public String exists(String target) {
+
+		try{
+			s.exists(ip+target).toString();
+			return "true";
+		}catch(Exception e){
+			return "false";
+		}
+	}
+
+	/**
+	 * 找到和目标图片相识度最高的图片
+	 * @param target 目标图片
+	 * @return
+	 */
+	public String find(String target) {
+
+		try {
+			s.find(ip+target);
+			return "true";
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return "false";
+	}
+
+	/**
+	 * 对目标图片进行鼠标右键
+	 * @param target 目标图片
+	 * @return
+	 */
+	public long rightClick(String target) {
+
+		try {
+
+			s.rightClick(ip+target);
+			return System.currentTimeMillis();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return pageNotFind;
+	}
+
+	/**
+	 * 在指定时间内目标图片是否消失
+	 * @param target 目标图片
+	 * @param time	指定时间
+	 * @return true为消失;false为还存在
+	 */
+	public boolean waitVanish(String target, double time) {
+		return s.waitVanish(ip+target,time);
+	}
+
+	/**
+	 * 在指定时间内目标图片是否出现
+	 * @param target 目标图片
+	 * @param time 指定时间
+	 * @return
+	 */
+	public String wait(String target, double time) {
+
+		try{
+			s.wait(ip+target, time);
+			return "true";
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+
+		return "false";
+	}
+
+	/**
+	 * 等待制定时间
+	 * @param time
+	 * @return
+	 */
+	public String wait(double time){
+		try {
+			s.wait(time);
+			return "true";
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return "false";
+	}
+
+	/**
+	 * 删掉指定进程
+	 * @param taskname 指定进程
+	 * @return
+	 */
+	public String KillTask(String taskname){
+
+			if (!taskname.contains(".exe")) { taskname = taskname + ".exe"; }
+			String Command = "taskkill /F /im \"" + taskname+"\"";
+
+			try {
+				Runtime.getRuntime().exec(Command);
+				return "true";
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			return "false";
+	}
+
+	/**
+	 * 将屏幕截图保存本地
+	 * @param filepath 图片存放文件夹路径
+	 * @param name	图片名称
+	 * @return
+	 */
+	public String getScreenShot(String filepath, String name) {
+
+		Dimension d = Toolkit.getDefaultToolkit().getScreenSize();
+		try {
+			BufferedImage screenshot = (new Robot()).createScreenCapture(new Rectangle(0, 0, (int) d.getWidth(), (int) d.getHeight()));
+			File picpath = new File(filepath);
+			if (!picpath.exists()) { picpath.mkdirs(); }//判断文件夹是否存在,不存在进行创建.
+			if (!name.contains(".png")) { name = name + ".png"; }
+
+			String fileName = filepath + "/" + name.replace(":", "_");//图片路径
+			File f = new File(fileName);
+			System.out.print("Save File " + fileName);
+			ImageIO.write(screenshot, "png", f);
+			return "true";
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return "false";
+	}
+
+	/**
+	 * 将屏幕截图存储到指定的文件加目录
+	 * @param path	文件夹路径
+	 * @param name	图片名称
+	 * @return
+	 */
+	public String getLastScreenImageFile(String path, String name)  {
+
+		File f = new File(path);
+		if (!f.exists()) {f.mkdirs();}
+
+		try{
+			return s.getLastScreenImageFile(path, name + ".png");
+		}catch(Exception e){
+			e.printStackTrace();
+			return "false";
+		}
+	}
+
+	/**
+	 * 从arg0往arg1进行拖放
+	 * @param arg0
+	 * @param arg1
+	 * @return
+	 */
+	public long dragDrop(String arg0, String arg1){
+
+		try {
+
+			s.dragDrop(arg0, arg1);
+			return System.currentTimeMillis();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return pageNotFind;
+	}
+
+	/**
+	 * 鼠标移动到指定的x和y坐标
+	 * @param x x坐标
+	 * @param y y坐标
+	 * @return
+	 */
+	public long mouseMove(int x, int y) {
+
+		s.mouseMove(x, y);
+		return System.currentTimeMillis();
+
+	}
+
+	  /**
+	   * 执行指定快捷键
+	   * @param pageHotKey 指定快捷键
+	   *
+	   * 存在修饰键：Shift、Ctrl、Alt(Option)、AltGr、Windows logo、Command、FN(Function)
+	   * 需要调用keyUp方法来释放修饰键，否则会一直按住
+	   */
+	  public void hotKey(String pageHotKey){
+		  s.keyDown(pageHotKey);
+		  s.keyUp();
+	  }
+
+	/**
+	 * 快捷键
+	 */
+   public void clear(){
+
+	   s.keyDown(Key.CTRL+"a");
+	   s.keyDown(Key.DELETE);
+	   s.keyUp();
+   }
+
+	/**
+	 * 执行cmd命令
+	 * @param cmd	cmd命令
+	 * @return
+	 */
+	public long cmd(String cmd) {
+
+		try {
+			Runtime.getRuntime().exec(cmd);
+			return System.currentTimeMillis();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return fail;
+	}
+
+   /**
+    * 对目标图片进行滑动鼠标滚轮
+    * @param string 目标图片
+    * @param wHEEL_DOWN 向上向下
+    * @param i 滚几下
+    */
+   public long mouseWheel(int wHEEL_DOWN, int i){
+
+	   try {
+		   s.wheel(wHEEL_DOWN, i);
+		   return System.currentTimeMillis();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	   return pageNotFind;
+   }
+
+  /**
+   * 获取所有的标签，移位点击
+   * @param target 目标图片
+   */
+   public void getLabelClick(String target){
+
+	   try{
+		   Iterator<Match> itrmc  = s.findAll(ip+target);
+		   if(itrmc.hasNext()){
+			   s.click(itrmc.next().getTarget().offset(-50, -30));
+		   }
+	   }catch(Exception e){
+		   e.printStackTrace();
+	   }
+   }
+
+	/**
+	 * 点击click 后获取对应的响应时间
+	 * @param testMethod 执行的小场景名称
+	 * @param target	点击的目标图片
+	 * @param waitTarget 响应的目标图片
+	 * @param outTime	指定响应时间
+	 * @return
+	 */
+	public int getResponseTimeAfterClick(String testMethod, String target, String waitTarget, double outTime) {
+
+		long result = click(target);
+		if(result==pageNotFind)return pageNotFind;//操作失败进行返回
+		return getTime(testMethod, waitTarget, outTime);
+	}
+
+	/**
+	 * 点击doubleClick 后获取对应的响应时间
+	 * @param testMethod 执行的小场景名称
+	 * @param target	点击的目标图片
+	 * @param waitTarget 响应的目标图片
+	 * @param outTime	指定响应时间
+	 * @return
+	 */
+	public int getResponseTimeAfterDoubleClick(String testMethod, String target, String waitTarget, double outTime) {
+
+		long result = doubleclick(target);
+		if(result==pageNotFind)return pageNotFind;//操作失败进行返回
+		return getTime(testMethod, waitTarget, outTime);
+	}
+
+	/**
+	 * 根据坐标进行点击后获取响应时间
+	 * @param testMethod 执行的小场景名称
+	 * @param x 横坐标
+	 * @param y 纵坐标
+	 * @param waitTarget 响应的目标图片
+	 * @param outTime	指定响应时间
+	 * @return
+	 */
+	public int getResponseTimeAfterLocation(String testMethod, String x, String y, String waitTarget, double outTime){
+
+		l.setLocation(Double.parseDouble(x), Double.parseDouble(y));
+		l.click();
+		return getTime(testMethod, waitTarget, outTime);
+	}
+
+	/**
+	 * 执行cmd 启动101教育PPT后,获取对应的响应信息
+	 * @param testMethod 执行的小场景名称
+	 * @param target	cmd命令
+	 * @param waitTarget 响应的目标图片
+	 * @param outTime	指定响应时间
+	 * @return
+	 */
+	public int getResponseTimeAfterCmd(String testMethod, String target, String waitTarget, double outTime) {
+
+		if (cmd(target)!=success) {
+			return pageNotFind;
+		}
+
+		return getTime(testMethod, waitTarget, outTime);
+	}
+
+	/**
+	 * 判断目标图片在指定时间内的响应时间
+	 * @param testMethod 执行的小场景名称
+	 * @param waitTarget 目标图片
+	 * @param outTime 指定时间
+	 * @return
+	 */
+	public int getTime(String testMethod, String waitTarget, double outTime){
+
+		long startTime = System.currentTimeMillis();
+		try {
+			s.wait(ip+waitTarget, outTime);
+			return (int) (System.currentTimeMillis() - startTime);
+		} catch (FindFailed e) {
+			e.printStackTrace();
+		}
+
+		return pageNotFind;
+	}
+
+	/**
+	 * 判断目标图片在指定时间内的响应时间
+	 * @param testMethod 执行的小场景名称
+	 * @param waitTarget 目标图片
+	 * @param outTime 指定时间
+	 * @return
+	 */
+	public String getTime1(String testMethod, String waitTarget, double outTime){
+
+		try {
+			long startTime = System.currentTimeMillis();
+			s.wait(ip+waitTarget, outTime);
+			long endTime = System.currentTimeMillis();
+			return startTime+";"+endTime;
+		} catch (FindFailed e) {
+			e.printStackTrace();
+		}
+
+		return pageNotFind+"";
+	}
+
+	/**
+	 * 删除指定文件夹目录和目录下的文件
+	 * @param dirPath 指定文件夹
+	 */
+	public int deleteFilesInDir(final String dirPath) {
+
+		File file = new File(dirPath);
+		if(!file.exists()){ return pageNotFind; }//没有该文件夹
+
+		try {
+			Runtime.getRuntime().exec("cmd.exe /C rmdir /s/q "+ dirPath);//删除文件夹
+			CommonUtil.getInstance().sleep(8000);
+			Runtime.getRuntime().exec("cmd.exe /C md "+ dirPath);//创建文件夹
+			return success;
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return fail;
+	}
+
+	public void say(String content) {
+
+	}
+
+	/**
+	 * 判断进程是否存在
+	 * @param processName 进程名
+	 * @return true or false
+	 */
+	public boolean processJudgeRunning(String processName) {
+
+		if(!processName.contains(".exe")){ processName += ".exe"; }
+		BufferedReader bufferedReader = null;
+		try {
+			Process proc = Runtime.getRuntime().exec("tasklist -FI \"IMAGENAME eq " + processName + "\"");
+			bufferedReader = new BufferedReader(new InputStreamReader(proc.getInputStream(),"gbk"));
+			String line = null;
+			while ((line = bufferedReader.readLine()) != null) {
+				System.out.println(line);
+				if (line.contains(processName)) {
+					return true;
+				}
+			}
+			return false;
+		} catch (Exception ex) {
+			ex.printStackTrace();
+			return false;
+		} finally {
+
+			if (bufferedReader != null) {
+				try {bufferedReader.close();} catch (Exception ex) {}
+			}
+		}
+	}
+
+	//粘贴
+	public int paste(String content) {
+		return s.paste(content);
+	}
+
+}
+
