@@ -1458,7 +1458,7 @@ class Action(Operation, SystemDiaglog, UI):
         :return: 
         '''
         # tag = (self.__class__.__doc__ or u"测试") + "_" + self.__class__.__name__  
-        # print "tag:", tag
+        pass
         self.cmdSubprocess('"%s" --STARTSCENE("%s")' % (SourcePath.File_PCPA, tag))
 
     def endScene(self, tag):
@@ -1467,4 +1467,5 @@ class Action(Operation, SystemDiaglog, UI):
         :param tag: 场景名
         :return: 
         '''
-        self.cmdSubprocess('"%s" --ENDSCENE("%s")' % (SourcePath.File_PCPA, tag))
+        pass
+        # self.cmdSubprocess('"%s" --ENDSCENE("%s")' % (SourcePath.File_PCPA, tag))
